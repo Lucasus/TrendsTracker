@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Web
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendsTracker", "TrendsTracker\TrendsTracker.csproj", "{9178AC97-B9CE-4DCD-85F3-9B1DEA1B2C10}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendsTracker.Web", "TrendsTracker.Web\TrendsTracker.Web.csproj", "{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendsTracker.Tests.E2E", "TrendsTracker.Tests.E2E\TrendsTracker.Tests.E2E.csproj", "{5FBDE2C6-231D-4BD1-84AA-63012B98436E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendsTracker.Tests", "TrendsTracker.Tests.E2E\TrendsTracker.Tests.csproj", "{5FBDE2C6-231D-4BD1-84AA-63012B98436E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{91698556-AE04-4074-A691-4254DBE3EDD2}"
 	ProjectSection(SolutionItems) = preProject

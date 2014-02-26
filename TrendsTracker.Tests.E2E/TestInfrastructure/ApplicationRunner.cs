@@ -21,7 +21,7 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
             driver.Navigate().GoToUrl(getAbsoluteUrl(url));
         }
 
-        public void pageContainsText(string text)
+        public void assertContainsText(string text)
         {
             Assert.That(driver.ContainsText(text), Is.True);
         }
