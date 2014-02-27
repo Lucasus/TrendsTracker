@@ -1,7 +1,36 @@
-﻿
-@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html data-ng-app="trendsTrackerApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trends Tracker </title>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <h1>Trends Tracker</h1>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
 
-<h2>Home page</h2>
+    <div class="container body-content">
+        <div data-ng-view=""></div>
+    </div>
 
+    <footer>
+        <p>&copy; 2014 - Łukasz Wiatrak</p>
+    </footer>
+
+    <!-- 3rd party libraries -->
+    <script src="/Scripts/angular.js"></script>
+    <script src="/Scripts/angular-route.js"></script>
+
+    <!-- Custom scripts -->
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers/keywordController.js"></script>
+</body>
+</html>
