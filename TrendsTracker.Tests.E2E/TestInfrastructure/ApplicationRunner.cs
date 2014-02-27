@@ -14,6 +14,7 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
         public ApplicationRunner()
         {
             driver = new FirefoxDriver();
+            driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(300));
         }
 
         public void GoTo(string url)

@@ -8,7 +8,7 @@
     app.config(['$routeProvider', function ($routeProvider)
     {
         $routeProvider
-            .when('/keyword',
+            .when('/keyword/:keywordName',
             {
                 controller: 'KeywordController',
                 templateUrl: '/app/views/keyword.html'

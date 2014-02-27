@@ -18,5 +18,13 @@ namespace TrendsTracker.Reps
                 context.SaveChanges();
             }
         }
+
+        public Keyword GetByUrlName(string keywordName)
+        {
+            using (var context = new PersistenceContext())
+            {
+                return context.Keywords.Where(x => x.UrlFriendlyName == keywordName).SingleOrDefault();
+            }
+        }
     }
 }
