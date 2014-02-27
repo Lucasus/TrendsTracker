@@ -13,7 +13,8 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
 
         public ApplicationRunner()
         {
-            driver = new FirefoxDriver();
+          //  driver = new FirefoxDriver();
+            driver = new OpenQA.Selenium.PhantomJS.PhantomJSDriver();
             driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(300));
         }
 
