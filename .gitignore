@@ -113,3 +113,4 @@ UpgradeLog*.XML
 /TrendsTracker.Web/Scripts/angular.js
 /TrendsTracker.Web/Scripts/angular.min.js
 /TrendsTracker.Web/Scripts/angular.min.js.map
+/TrendsTracker.Web/Web.DeployDev.config
