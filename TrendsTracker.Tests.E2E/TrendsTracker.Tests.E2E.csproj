@@ -76,12 +76,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\WebDriverExtensions.cs" />
+    <Compile Include="Pages\KeywordPage.cs" />
+    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="TestInfrastructure\WebTestBase.cs" />
+    <Compile Include="TestInfrastructure\Page.cs" />
     <Compile Include="TestInfrastructure\DataDeleter.cs" />
     <Compile Include="TestInfrastructure\E2ETestBase.cs" />
     <Compile Include="E2ETests\HomePageTests.cs" />
     <Compile Include="TestInfrastructure\ApplicationRunner.cs" />
-    <Compile Include="E2ETests\KeywordDetailsTests.cs" />
+    <Compile Include="E2ETests\KeywordPageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DatabaseTests\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\packages\PhantomJS.1.9.7\tools\phantomjs\phantomjs.exe">

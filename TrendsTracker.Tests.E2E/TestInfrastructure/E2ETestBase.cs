@@ -4,28 +4,18 @@ using TrendsTracker.Tests.E2E.TestInfrastructure;
 namespace TrendsTracker.E2ETests
 {
     [TestClass]
-    public partial class E2ETestBase
+    public abstract class E2ETestBase<T>: WebTestBase
+        where T: Page
     {
-        private static ApplicationRunner app;
+        protected T page;
 
-        public ApplicationRunner App { get { return app; } }
-
-        [AssemblyInitialize()]
-        public static void AssemblyInit(TestContext context)
-        {
-            app = new ApplicationRunner();
-        }
-
-        [AssemblyCleanup()]
-        public static void AssemblyCleanup()
-        {
-            app.Dispose();
-        }
+        protected abstract T createPage(ApplicationRunner app);
 
         [TestInitialize]
         public void TestInitialize()
         {
             new DataDeleter().DeleteAllData();
+            page = createPage(App);
         }
 
         public void FixEfProviderServicesProblem()

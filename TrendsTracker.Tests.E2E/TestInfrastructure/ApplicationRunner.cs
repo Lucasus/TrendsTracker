@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.PhantomJS;
 using System;
-using TrendsTracker.Tests.E2E.Extensions;
 
 namespace TrendsTracker.Tests.E2E.TestInfrastructure
 {
@@ -11,21 +11,18 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
         private IWebDriver driver;
         private const int testPort = 80;
 
+        public IWebDriver Driver { get { return driver; } }
+
         public ApplicationRunner()
         {
-          //  driver = new FirefoxDriver();
-            driver = new OpenQA.Selenium.PhantomJS.PhantomJSDriver();
-            driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(30000));
+            //driver = new FirefoxDriver();
+            driver = new PhantomJSDriver();
+            driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(3000));
         }
 
         public void GoTo(string url)
         {
             driver.Navigate().GoToUrl(getAbsoluteUrl(url));
-        }
-
-        public void assertContainsText(string text)
-        {
-            Assert.That(driver.ContainsText(text), Is.True);
         }
 
         public void Dispose()
@@ -40,6 +37,17 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
                 relativeUrl = "/" + relativeUrl;
             }
             return String.Format("http://localhost:{0}{1}", testPort, relativeUrl);
+        }
+
+        public void FixEfProviderServicesProblem()
+        {
+            //Fixes problem in TeamCity builds:
+
+            //The Entity Framework provider type 'System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer'
+            //for the 'System.Data.SqlClient' ADO.NET provider could not be loaded. 
+            //Make sure the provider assembly is available to the running application. 
+            //See http://go.microsoft.com/fwlink/?LinkId=260882 for more information.
+            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
     }
 }
