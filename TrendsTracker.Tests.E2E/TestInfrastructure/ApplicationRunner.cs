@@ -9,7 +9,7 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
     public class ApplicationRunner : IDisposable
     {
         private IWebDriver driver;
-        private const int testPort = 12345;
+        private const int testPort = 80;
 
         public ApplicationRunner()
         {
