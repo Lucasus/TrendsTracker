@@ -1,4 +1,5 @@
-﻿using TrendsTracker.Entities;
+﻿using System.Threading;
+using TrendsTracker.Entities;
 using TrendsTracker.Reps;
 using MSTests = Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -13,6 +14,7 @@ namespace TrendsTracker.E2ETests
 
             new KeywordRepository().AddKeyword(new Keyword() { Name = "Java", UrlFriendlyName = "java" });
             App.GoTo("#/keyword/java");
+            Thread.Sleep(10000);
             App.assertContainsText("Java");
         }
     }
