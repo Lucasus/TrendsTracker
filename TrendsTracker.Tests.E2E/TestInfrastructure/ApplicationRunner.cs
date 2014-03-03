@@ -22,7 +22,7 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
 
         public void GoTo(string url)
         {
-            driver.Navigate().GoToUrl(getAbsoluteUrl(url));
+            driver.Navigate().GoToUrl(getAbsoluteUrl(url));  
         }
 
         public void Dispose()
