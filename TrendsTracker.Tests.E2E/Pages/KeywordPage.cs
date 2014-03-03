@@ -20,7 +20,7 @@ namespace TrendsTracker.Tests.E2E.Pages
 
         public void AssertKeywordNameIs(string keywordName)
         {
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => { return !IsEmpty(".mainView"); });
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => { return !IsEmpty(".mainView") && !IsEmpty(".keywordName"); });
             AssertContainsText(".mainView", keywordName);
         }
     }
