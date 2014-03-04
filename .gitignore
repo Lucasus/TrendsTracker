@@ -115,3 +115,5 @@ UpgradeLog*.XML
 /TrendsTracker.Web/Scripts/angular.min.js.map
 /TrendsTracker.Web/Web.DeployDev.config
 /TrendsTracker.Web/Web.Production.config
+/TrendsTracker.Web/Properties/PublishProfiles/trends-tracker.com - Web Deploy.pubxml
+TrendsTracker.Web/Properties/PublishProfiles/trends-tracker.com - Web Deploy.pubxml.user
