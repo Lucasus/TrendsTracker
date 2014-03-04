@@ -3,18 +3,20 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.PhantomJS;
 using System;
+using System.Configuration;
 
 namespace TrendsTracker.Tests.E2E.TestInfrastructure
 {
     public class ApplicationRunner : IDisposable
     {
         private IWebDriver driver;
-        private const int testPort = 80;
+        private int testPort;
 
         public IWebDriver Driver { get { return driver; } }
 
         public ApplicationRunner()
         {
+            testPort = Int32.Parse(ConfigurationManager.AppSettings.Get("Port"));
             //driver = new FirefoxDriver();
             driver = new PhantomJSDriver();
             driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(3000));
