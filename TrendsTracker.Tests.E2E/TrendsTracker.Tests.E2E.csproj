@@ -76,8 +76,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\KeywordPage.cs" />
-    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="E2ETests\Pages\KeywordPage.cs" />
+    <Compile Include="E2ETests\Pages\HomePage.cs" />
+    <Compile Include="TestInfrastructure\ProviderServicesWorkaround.cs" />
+    <Compile Include="TestInfrastructure\Tag.cs" />
     <Compile Include="TestInfrastructure\WebTestBase.cs" />
     <Compile Include="TestInfrastructure\Page.cs" />
     <Compile Include="TestInfrastructure\DataDeleter.cs" />

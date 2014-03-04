@@ -10,10 +10,6 @@
             keywordsService.getKeyword($routeParams.keywordName).then(function(data)
             {
                 $scope.keyword = data;
-                //$timeout(function ()
-                //{
-                //    $scope.keyword = data;
-                //}, 3000)
             });
         };
     };

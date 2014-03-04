@@ -1,4 +1,5 @@
-﻿using TrendsTracker.Tests.E2E.Pages;
+﻿using NUnit.Framework;
+using TrendsTracker.Tests.E2E.Pages;
 using TrendsTracker.Tests.E2E.TestInfrastructure;
 using MSTests = Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -13,7 +14,7 @@ namespace TrendsTracker.E2ETests
         public void user_enters_HomePage_and_should_see_website_name()
         {
             App.GoTo(page.PageUrl);
-            page.AssertContainsText("body", "Trends Tracker");
+            page.AssertHeaderIs("Trends Tracker");
         }
     }
 }

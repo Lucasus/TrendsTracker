@@ -19,16 +19,9 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
             this.driver = driver;
         }
 
-        public void AssertContainsText(string selector, string text)
+        public Tag Tag(string selector)
         {
-            var domTag = driver.FindElement(By.CssSelector(selector));
-            Assert.That(domTag.Text.Contains(text), Is.True);
-        }
-
-        public bool IsEmpty(string selector)
-        {
-            var domTag = driver.FindElement(By.CssSelector(selector));
-            return String.IsNullOrEmpty(domTag.Text);
+            return new Tag(driver, selector);
         }
     }
 }
