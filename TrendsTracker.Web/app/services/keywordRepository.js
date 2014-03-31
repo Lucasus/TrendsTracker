@@ -1,11 +1,14 @@
-﻿(function ()
+﻿var trendsTracker;
+(function (trendsTracker)
 {
-    var keywordsService = function ($http, $q)
+    "use strict";
+
+    trendsTracker.KeywordRepository = function ($http, $q)
     {
         var serviceBase = '/api/keywords/';
         var factory = {};
 
-        factory.getKeyword = function (name)
+        factory.getByName = function (name)
         {
             return $http.get(serviceBase + name).then(function (results)
             {
@@ -16,8 +19,4 @@
         return factory;
     };
 
-    keywordsService.$inject = ['$http', '$q'];
-
-    angular.module('trendsTrackerApp').factory('keywordsService', keywordsService);
-
-}());
+}(trendsTracker || (trendsTracker = {})));

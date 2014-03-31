@@ -1,19 +1,19 @@
-﻿(function ()
+﻿var trendsTracker;
+(function (trendsTracker)
 {
+    "use strict";
 
-    var KeywordController = function ($scope, $routeParams, $timeout, keywordsService)
+    trendsTracker.KeywordController = function ($scope, $routeParams, $timeout, keywordRepository)
     {
         init();
 
         function init()
         {
-            keywordsService.getKeyword($routeParams.keywordName).then(function(data)
+            keywordRepository.getByName($routeParams.keywordName).then(function (data)
             {
                 $scope.keyword = data;
             });
         };
     };
 
-    KeywordController.$inject = ['$scope', '$routeParams', '$timeout', 'keywordsService'];
-    angular.module('trendsTrackerApp').controller('KeywordController', KeywordController);
-}());
+}(trendsTracker || (trendsTracker = {})));

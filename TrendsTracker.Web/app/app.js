@@ -1,9 +1,11 @@
-﻿(function ()
+﻿var trendsTracker;
+(function (trendsTracker)
 {
     "use strict";
 
-    var app = angular.module('trendsTrackerApp',
-        ['ngRoute']);
+    var app = angular.module('trendsTrackerApp', ['ngRoute'])
+        .controller('KeywordController', trendsTracker.KeywordController)
+        .factory('keywordRepository', trendsTracker.KeywordRepository);
 
     app.config(['$routeProvider', function ($routeProvider)
     {
@@ -20,4 +22,5 @@
         function ()
         {
         }]);
-}());
+}(trendsTracker || (trendsTracker = {})));
+
