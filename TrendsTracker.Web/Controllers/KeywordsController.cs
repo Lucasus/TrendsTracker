@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using TrendsTracker.Entities;
 using TrendsTracker.Reps;
@@ -11,9 +7,18 @@ namespace TrendsTracker.Web.Controllers
 {
     public class KeywordsController : ApiController
     {
-        private KeywordRepository keywordRepository = new KeywordRepository();
+        private KeywordRepository keywordRepository;
 
-        // GET api/keywords/x
+        public KeywordsController(KeywordRepository keywordRepository)
+        {
+            this.keywordRepository = keywordRepository;
+        }
+
+        public IEnumerable<Keyword> Get()
+        {
+            return keywordRepository.GetAll();
+        }
+
         public Keyword Get(string keywordName)
         {
             return keywordRepository.GetByUrlName(keywordName);

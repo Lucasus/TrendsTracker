@@ -116,3 +116,5 @@ UpgradeLog*.XML
 /TrendsTracker.Web/Web.DeployDev.config
 /TrendsTracker.Web/Properties/PublishProfiles/Prod.pubxml
 /TrendsTracker.Web/Web.Prod.config
+/UpgradeLog.htm
+/UpgradeLog2.htm

@@ -13,7 +13,7 @@
             .when('/keyword/:keywordName',
             {
                 controller: 'KeywordController',
-                templateUrl: '/app/views/keyword.html'
+                templateUrl: '/app/views/keywords.html'
             })
             .otherwise({ redirectTo: '/' });
     }]);

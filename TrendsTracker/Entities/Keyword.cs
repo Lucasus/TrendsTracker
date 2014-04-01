@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrendsTracker.Infrastructure;
 
 namespace TrendsTracker.Entities
 {
-    public class Keyword
+    public class Keyword : Entity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string UrlFriendlyName { get; set; }
     }
