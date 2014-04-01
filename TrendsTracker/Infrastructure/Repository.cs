@@ -15,9 +15,9 @@ namespace TrendsTracker.Infrastructure
             this.context = context;
         }
 
-        public virtual IQueryable<T> GetAll()
+        public virtual IList<T> GetAll()
         {
-            return context.Set<T>();
+            return context.Set<T>().ToList();
         }
 
         public virtual T GetById(int id)
@@ -28,20 +28,17 @@ namespace TrendsTracker.Infrastructure
         public void Add(T entity)
         {
             context.Set<T>().Add(entity);
-            context.SaveChanges();
         }
 
         public void Update(T entity)
         {
             context.Entry(entity).State = EntityState.Modified;
-            context.SaveChanges();
         }
 
         public virtual void Delete(int id)
         {
             var entity = new T() { Id = id };
             context.Entry(entity).State = EntityState.Deleted;
-            context.SaveChanges();
         }
 
     }

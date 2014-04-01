@@ -9,10 +9,15 @@
 
         function init()
         {
-            keywordRepository.getByName($routeParams.keywordName).then(function (data)
+            keywordRepository.getAll().then(function (data)
             {
-                $scope.keyword = data;
+                $scope.keywords = data;
             });
+
+            //keywordRepository.getByName($routeParams.keywordName).then(function (data)
+            //{
+            //    $scope.keyword = data;
+            //});
         };
     };
 

@@ -5,22 +5,18 @@
 
     var app = angular.module('trendsTrackerApp', ['ngRoute'])
         .controller('KeywordController', trendsTracker.KeywordController)
-        .factory('keywordRepository', trendsTracker.KeywordRepository);
+        .service('keywordRepository', trendsTracker.KeywordRepository);
 
     app.config(['$routeProvider', function ($routeProvider)
     {
         $routeProvider
-            .when('/keyword/:keywordName',
+            .when('/keywords',
             {
                 controller: 'KeywordController',
                 templateUrl: '/app/views/keywords.html'
             })
-            .otherwise({ redirectTo: '/' });
+            .otherwise({ redirectTo: '/keywords' });
     }]);
 
-    app.run([
-        function ()
-        {
-        }]);
 }(trendsTracker || (trendsTracker = {})));
 

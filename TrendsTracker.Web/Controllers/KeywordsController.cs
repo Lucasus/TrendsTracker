@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
 using System.Web.Http;
 using TrendsTracker.Entities;
 using TrendsTracker.Reps;
+using TrendsTracker.Web.Utilities;
+using TrendsTracker.Web.Dto.Keywords;
 
 namespace TrendsTracker.Web.Controllers
 {
@@ -14,14 +17,14 @@ namespace TrendsTracker.Web.Controllers
             this.keywordRepository = keywordRepository;
         }
 
-        public IEnumerable<Keyword> Get()
+        public IEnumerable<KeywordDto> Get()
         {
-            return keywordRepository.GetAll();
+            return keywordRepository.GetAll().Select(x => x.ToViewModel<KeywordDto>());
         }
 
-        public Keyword Get(string keywordName)
+        public KeywordDto Get(string keywordName)
         {
-            return keywordRepository.GetByUrlName(keywordName);
+            return keywordRepository.GetByUrlName(keywordName).ToViewModel<KeywordDto>();
         }
     }
 }

@@ -6,9 +6,16 @@
     trendsTracker.KeywordRepository = function ($http, $q)
     {
         var serviceBase = '/api/keywords/';
-        var factory = {};
 
-        factory.getByName = function (name)
+        this.getAll = function ()
+        {
+            return $http.get(serviceBase).then(function (results)
+            {
+                return results.data;
+            });
+        };
+
+        this.getByName = function (name)
         {
             return $http.get(serviceBase + name).then(function (results)
             {
@@ -16,7 +23,6 @@
             });
         };
 
-        return factory;
     };
 
 }(trendsTracker || (trendsTracker = {})));
