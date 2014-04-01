@@ -4,8 +4,10 @@
     "use strict";
 
     var app = angular.module('trendsTrackerApp', ['ngRoute'])
+        .service('spinner', trendsTracker.Spinner)
+        .service('keywordRepository', trendsTracker.KeywordRepository)
         .controller('KeywordController', trendsTracker.KeywordController)
-        .service('keywordRepository', trendsTracker.KeywordRepository);
+        .controller('SpinnerController', trendsTracker.SpinnerController);
 
     app.config(['$routeProvider', function ($routeProvider)
     {

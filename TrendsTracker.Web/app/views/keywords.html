@@ -1,3 +1,18 @@
-﻿<div data-ng-repeat="keyword in keywords">
-    keyword: <span class="keywordName">{{keyword.name}}</span>
+﻿<div>
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th style="width: 50px;"></th>
+            <th style="width: 50px;"></th>
+        </tr>
+        <tr data-ng-repeat="keyword in keywords">
+            <td>{{keyword.name}}</td>
+            <td>
+                <button type="button" class="cmdEdit btn-link tableBtn">Edit</button>
+            </td>
+            <td>
+                <button type="button" class="cmdDelete btn-link tableBtn">Delete</button>
+            </td>
+        </tr>
+    </table>
 </div>
