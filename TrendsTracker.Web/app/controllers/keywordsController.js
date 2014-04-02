@@ -2,16 +2,16 @@
 {
     "use strict";
 
-    trendsTracker.KeywordController = function ($scope, $routeParams, $timeout, keywordRepository, spinner)
+    trendsTracker.KeywordsController = function ($scope, $routeParams, $timeout, keywordRepository, spinner)
     {
         init();
 
         function init()
         {
             spinner.loading = true;
-            keywordRepository.get({ name: $routeParams.name }, function (data)
+            keywordRepository.query(function (data)
             {
-                $scope.keyword = data;
+                $scope.keywords = data;
                 spinner.loading = false;
             });
         };

@@ -78,6 +78,14 @@
     <Compile Include="Migrations\201404011219303_TableRename.Designer.cs">
       <DependentUpon>201404011219303_TableRename.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404021339072_RemoveColumnUrlFriendlyName.cs" />
+    <Compile Include="Migrations\201404021339072_RemoveColumnUrlFriendlyName.Designer.cs">
+      <DependentUpon>201404021339072_RemoveColumnUrlFriendlyName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404021503198_AddColumnUrlFriendlyName.cs" />
+    <Compile Include="Migrations\201404021503198_AddColumnUrlFriendlyName.Designer.cs">
+      <DependentUpon>201404021503198_AddColumnUrlFriendlyName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\MigrationConfiguration.cs" />
     <Compile Include="Persistence\PersistenceContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404011219303_TableRename.resx">
       <DependentUpon>201404011219303_TableRename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404021339072_RemoveColumnUrlFriendlyName.resx">
+      <DependentUpon>201404021339072_RemoveColumnUrlFriendlyName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404021503198_AddColumnUrlFriendlyName.resx">
+      <DependentUpon>201404021503198_AddColumnUrlFriendlyName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -146,10 +146,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\controllers\spinnerController.js" />
     <Content Include="app\controllers\keywordController.js" />
+    <Content Include="app\controllers\spinnerController.js" />
+    <Content Include="app\controllers\keywordsController.js" />
     <Content Include="app\services\spinner.js" />
     <Content Include="app\services\keywordRepository.js" />
+    <Content Include="app\views\keyword.html" />
     <Content Include="app\views\keywords.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -159,6 +161,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
@@ -192,6 +195,7 @@
     <Compile Include="Infrastructure\PersistenceInstaller.cs" />
     <Compile Include="Infrastructure\WinsorControllerActivator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\FriendlyUrlGenerator.cs" />
     <Compile Include="Utilities\MappingHelper.cs" />
     <Compile Include="Utilities\VariousExtensions.cs" />
   </ItemGroup>

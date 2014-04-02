@@ -8,5 +8,6 @@ namespace TrendsTracker.Web.Dto.Keywords
     public class KeywordDto
     {
         public string Name { get; set; }
+        public string UrlFriendlyName { get; set; }
     }
 }

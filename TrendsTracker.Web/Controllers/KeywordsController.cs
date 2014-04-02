@@ -8,6 +8,7 @@ using TrendsTracker.Web.Dto.Keywords;
 
 namespace TrendsTracker.Web.Controllers
 {
+    [RoutePrefix("api/keywords")]
     public class KeywordsController : ApiController
     {
         private KeywordRepository keywordRepository;
@@ -17,14 +18,16 @@ namespace TrendsTracker.Web.Controllers
             this.keywordRepository = keywordRepository;
         }
 
+        [Route("")]
         public IEnumerable<KeywordDto> Get()
         {
             return keywordRepository.GetAll().Select(x => x.ToViewModel<KeywordDto>());
         }
 
-        public KeywordDto Get(string keywordName)
+        [Route("{urlFriendlyName}")]
+        public KeywordDto Get(string urlFriendlyName)
         {
-            return keywordRepository.GetByUrlName(keywordName).ToViewModel<KeywordDto>();
+            return keywordRepository.GetByUrlFriendlyName(urlFriendlyName).ToViewModel<KeywordDto>();
         }
     }
 }

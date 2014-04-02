@@ -1,5 +1,4 @@
-﻿var trendsTracker;
-(function (trendsTracker)
+﻿(function (trendsTracker)
 {
     "use strict";
 
@@ -8,4 +7,4 @@
         this.loading = false;
     };
 
-}(trendsTracker || (trendsTracker = {})));
+}(window.trendsTracker = window.trendsTracker || {}));

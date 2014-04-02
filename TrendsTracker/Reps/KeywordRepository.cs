@@ -9,9 +9,9 @@ namespace TrendsTracker.Reps
     {
         public KeywordRepository(PersistenceContext context) : base(context) { }
 
-        public Keyword GetByUrlName(string keywordName)
+        public Keyword GetByUrlFriendlyName(string urlFriendlyName)
         {
-            return context.Keywords.Where(x => x.UrlFriendlyName == keywordName).SingleOrDefault();
+            return context.Keywords.Where(x => x.UrlFriendlyName == urlFriendlyName).SingleOrDefault();
         }
     }
 }

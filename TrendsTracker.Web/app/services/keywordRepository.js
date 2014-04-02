@@ -1,28 +1,14 @@
-﻿var trendsTracker;
-(function (trendsTracker)
+﻿(function (trendsTracker)
 {
     "use strict";
 
-    trendsTracker.KeywordRepository = function ($http, $q)
+    trendsTracker.KeywordRepository = function ($resource, $q)
     {
-        var serviceBase = '/api/keywords/';
+        var resourceUri = '/api/keywords/:name';
 
-        this.getAll = function ()
+        return $resource(resourceUri,
         {
-            return $http.get(serviceBase).then(function (results)
-            {
-                return results.data;
-            });
-        };
-
-        this.getByName = function (name)
-        {
-            return $http.get(serviceBase + name).then(function (results)
-            {
-                return results.data;
-            });
-        };
-
+            name: '@Name',
+        });
     };
-
-}(trendsTracker || (trendsTracker = {})));
+}(window.trendsTracker = window.trendsTracker || {}));
