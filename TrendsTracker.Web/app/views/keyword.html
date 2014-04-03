@@ -1,3 +1,9 @@
-﻿<div>
-    {{keyword.name}}
+﻿<div data-ng-show="form.mode == 'details'">
+    Details: {{keyword.name}}
+</div>
+<div data-ng-show="form.mode == 'insert'">
+    Insert mode
+</div>
+<div data-ng-show="form.mode == 'update'">
+    Edit mode: {{keyword.name}}
 </div>

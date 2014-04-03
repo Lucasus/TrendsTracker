@@ -1,8 +1,8 @@
-﻿(function (trendsTracker)
+﻿(function ()
 {
     "use strict";
 
-    trendsTracker.KeywordRepository = function ($resource, $q)
+    trendsTrackerApp.factory('keywordRepository', function ($resource, $q)
     {
         var resourceUri = '/api/keywords/:name';
 
@@ -10,5 +10,5 @@
         {
             name: '@Name',
         });
-    };
-}(window.trendsTracker = window.trendsTracker || {}));
+    });
+}());

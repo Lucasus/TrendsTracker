@@ -1,19 +1,28 @@
-﻿(function (trendsTracker)
+﻿(function ()
 {
     "use strict";
 
-    trendsTracker.KeywordController = function ($scope, $routeParams, $timeout, keywordRepository, spinner)
+    trendsTrackerApp.controller('KeywordController', function ($scope, keywordRepository, spinner, name, mode)
     {
         init();
 
         function init()
         {
-            spinner.loading = true;
-            keywordRepository.get({ name: $routeParams.name }, function (data)
+            $scope.form = { mode: mode };
+
+            if (name)
             {
-                $scope.keyword = data;
-                spinner.loading = false;
-            });
+                spinner.loading = true;
+                keywordRepository.get({ name: name }, function (data)
+                {
+                    $scope.keyword = data;
+                    spinner.loading = false;
+                });
+            }
+            else
+            {
+                $scope.keyword = {};
+            }
         };
-    };
-}(window.trendsTracker = window.trendsTracker || {}));
+    });
+}());

@@ -1,10 +1,10 @@
-﻿(function (trendsTracker)
+﻿(function ()
 {
     "use strict";
 
-    trendsTracker.Spinner = function ()
+    trendsTrackerApp.service('spinner', function ()
     {
         this.loading = false;
-    };
+    });
 
-}(window.trendsTracker = window.trendsTracker || {}));
+}());

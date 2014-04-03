@@ -1,4 +1,23 @@
 ﻿<div>
+    <h3>Keywords</h3>
+</div>
+
+<div id="formSearch" class="form-inline" role="form">
+    <div class="form-group">
+        Filter by
+        <label class="sr-only" for="searchName">Name</label>
+        <input type="text" class="form-control" id="searchName" placeholder="Enter name">
+    </div>
+    <button id="cmdSearch" type="button" class="btn btn-primary">Search</button>
+    <div class="btn-group pull-right">
+        <button id="cmdAdd" class="btn btn-success" data-ng-click="showInsertDialog()">
+            <span class=" glyphicon glyphicon-plus">
+            </span> Add keyword
+        </button>
+    </div>
+</div>
+
+<div style="margin-top: 10px;">
     <table class="table table-striped">
         <tr>
             <th>Name</th>
@@ -6,7 +25,7 @@
             <th style="width: 50px;"></th>
         </tr>
         <tr data-ng-repeat="keyword in keywords">
-            <td><a href="#/keywords/{{keyword.urlFriendlyName}}">{{keyword.name}}</a></td>
+            <td><a href="#/keywords/{{keyword.urlFriendlyName}}/details">{{keyword.name}}</a></td>
             <td>
                 <button type="button" class="cmdEdit btn-link tableBtn">Edit</button>
             </td>

@@ -1,15 +1,12 @@
-﻿(function (trendsTracker)
+﻿var trendsTrackerApp;
+
+(function ()
 {
     "use strict";
 
-    var app = angular.module('trendsTrackerApp', ['ngRoute', 'ngResource'])
-        .service('spinner', trendsTracker.Spinner)
-        .factory('keywordRepository', trendsTracker.KeywordRepository)
-        .controller('KeywordsController', trendsTracker.KeywordsController)
-        .controller('KeywordController', trendsTracker.KeywordController)
-        .controller('SpinnerController', trendsTracker.SpinnerController);
+    trendsTrackerApp = angular.module('trendsTrackerApp', ['ngRoute', 'ngResource', 'ui.bootstrap']);
 
-    app.config(['$routeProvider', function ($routeProvider)
+    trendsTrackerApp.config(['$routeProvider', function ($routeProvider)
     {
         $routeProvider
             .when('/keywords',
@@ -17,12 +14,24 @@
                 controller: 'KeywordsController',
                 templateUrl: '/app/views/keywords.html'
             })
-            .when('/keywords/:name',
+            .when('/keywords/:name/:mode',
             {
                 controller: 'KeywordController',
-                templateUrl: '/app/views/keyword.html'
+                templateUrl: '/app/views/keyword.html',
+                resolve:
+                    {
+                        name: function ($route)
+                        {
+                            return $route.current.params.name
+                        },
+
+                        mode: function ($route)
+                        {
+                            return $route.current.params.mode
+                        }
+                    }
             })
             .otherwise({ redirectTo: '/keywords' });
     }]);
 
-}(window.trendsTracker = window.trendsTracker || {}));
+}());

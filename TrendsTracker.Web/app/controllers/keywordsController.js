@@ -1,12 +1,12 @@
-﻿(function (trendsTracker)
+﻿(function ()
 {
     "use strict";
 
-    trendsTracker.KeywordsController = function ($scope, $routeParams, $timeout, keywordRepository, spinner)
+    trendsTrackerApp.controller('KeywordsController', function ($scope, $modal, keywordRepository, spinner)
     {
-        init();
+        loadKeywords();
 
-        function init()
+        function loadKeywords()
         {
             spinner.loading = true;
             keywordRepository.query(function (data)
@@ -15,5 +15,22 @@
                 spinner.loading = false;
             });
         };
-    };
-}(window.trendsTracker = window.trendsTracker || {}));
+
+        $scope.showInsertDialog = function ()
+        {
+            var modalInstance = $modal.open({
+                templateUrl: '/app/views/keywordModal.html',
+                controller: 'KeywordController',
+                resolve: {
+                    name: function () { return '' },
+                    mode: function () { return 'insert' }
+                }
+            });
+
+            modalInstance.result.then(function ()
+            {
+                loadKeywords();
+            });
+        };
+    });
+}());
