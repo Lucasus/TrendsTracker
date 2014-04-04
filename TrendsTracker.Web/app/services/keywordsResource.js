@@ -2,7 +2,7 @@
 {
     "use strict";
 
-    trendsTrackerApp.factory('keywords', function ($resource, $q)
+    trendsTrackerApp.factory('keywordsResource', function ($resource, $q)
     {
         var urlPrefix = "/api/keywords/";
 
@@ -11,6 +11,7 @@
             id: '@id'
         }, 
         {
+            'query': { method: 'GET', isArray: false },
             'create': { method: 'POST' },
             'update': { method: 'POST', url: urlPrefix + ':id' },
             'delete': { method: 'DELETE', url: urlPrefix + ':id' }

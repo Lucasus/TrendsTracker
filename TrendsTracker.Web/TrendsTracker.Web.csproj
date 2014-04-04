@@ -151,7 +151,7 @@
     <Content Include="app\controllers\spinnerCtrl.js" />
     <Content Include="app\controllers\keywordsCtrl.js" />
     <Content Include="app\directives\confirm.js" />
-    <Content Include="app\services\keywords.js" />
+    <Content Include="app\services\keywordsResource.js" />
     <Content Include="app\services\spinner.js" />
     <Content Include="app\views\keywordAddUpdate.html" />
     <Content Include="app\views\keyword.html" />
@@ -192,6 +192,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KeywordsController.cs" />
+    <Compile Include="Dto\Keywords\KeywordsDto.cs" />
     <Compile Include="Dto\Keywords\KeywordDto.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">

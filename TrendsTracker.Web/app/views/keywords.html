@@ -2,15 +2,15 @@
     <h3>Keywords</h3>
 </div>
 
-<div id="formSearch" class="form-inline" role="form">
+<div class="form-inline" role="form">
     <div class="form-group">
         Filter by
         <label class="sr-only" for="searchName">Name</label>
-        <input type="text" class="form-control" id="searchName" placeholder="Enter name">
+        <input type="text" class="form-control" placeholder="Enter name" data-ng-model="keywordsList.searchTerm">
     </div>
-    <button id="cmdSearch" type="button" class="btn btn-primary">Search</button>
+    <button id="cmdSearch" type="button" class="btn btn-primary" data-ng-click="search()">Search</button>
     <div class="btn-group pull-right">
-        <button id="cmdAdd" class="btn btn-success" data-ng-click="showDialog('')">
+        <button class="btn btn-success" data-ng-click="showDialog('')">
             <span class=" glyphicon glyphicon-plus">
             </span> Add keyword
         </button>
@@ -20,11 +20,11 @@
 <div style="margin-top: 10px;">
     <table class="table table-striped">
         <tr>
-            <th>Name</th>
+            <th><button type="button" class="btn-link tableBtn" data-ng-click="sort('name')">Name</button></th>
             <th style="width: 50px;"></th>
             <th style="width: 50px;"></th>
         </tr>
-        <tr data-ng-repeat="keyword in keywords">
+        <tr data-ng-repeat="keyword in keywordsList.items">
             <td><a href="#/keywords/{{keyword.urlFriendlyName}}">{{keyword.name}}</a></td>
             <td>
                 <button type="button" class="cmdEdit btn-link tableBtn" data-ng-click="showDialog(keyword.id)">Edit</button>
@@ -35,3 +35,17 @@
         </tr>
     </table>
 </div>
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-8 col-md-offset-2 text-center">
+        <div data-ng-show="keywordsList.totalRecordsCount > 0">
+            <div>
+                <div data-pagination="" data-previous-text="<" data-next-text=">" data-first-text="<<" data-last-text=">>"
+                     data-on-select-page="pageChanged(page)" data-total-items="keywordsList.totalRecordsCount" data-page="keywordsList.page"
+                     data-boundary-links="true" class="pagination pagination-sm" data-max-size="5" data-rotate="false" data-items-per-page="keywordsList.pageSize">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

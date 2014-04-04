@@ -1,23 +1,30 @@
-﻿(function ()
-{
+﻿(function () {
     "use strict";
 
-    trendsTrackerApp.controller('KeywordsCtrl', function ($scope, $modal, $route, keywords, spinner)
-    {
-        loadKeywords();
+    trendsTrackerApp.controller('KeywordsCtrl', function ($scope, $modal, $routeParams, keywordsResource, spinner) {
 
-        function loadKeywords()
-        {
+        $scope.keywordsList = {
+            searchTerm: $routeParams.searchTerm,
+            sortType: $routeParams.sortType,
+            pageSize: $routeParams.pageSize,
+            page: $routeParams.page
+        };
+
+        loadKeywords($scope.keywordsList);
+
+        function loadKeywords(keywordsList) {
             spinner.loading = true;
-            keywords.query(function (data)
-            {
-                $scope.keywords = data;
+            keywordsResource.query({
+                searchTerm: keywordsList.searchTerm || '',
+                sortType: keywordsList.sortType || '',
+                page: keywordsList.page || 1
+            }, function (data) {
+                $scope.keywordsList = data;
                 spinner.loading = false;
             });
         };
 
-        $scope.showDialog = function (id)
-        {
+        $scope.showDialog = function (id) {
             var modalInstance = $modal.open({
                 templateUrl: '/app/views/keywordAddUpdate.html',
                 controller: 'KeywordAddUpdateCtrl',
@@ -26,19 +33,36 @@
                 }
             });
 
-            modalInstance.result.then(function ()
-            {
-                loadKeywords();
+            modalInstance.result.then(function () {
+                loadKeywords($scope.keywordsList);
             });
         };
 
-        $scope.delete = function (id)
-        {
+        $scope.search = function () {
+            loadKeywords($scope.keywordsList);
+        };
+
+        $scope.sort = function (column) {
+            if (column == 'name') {
+                if ($scope.keywordsList.sortType == 'name_asc') {
+                    $scope.keywordsList.sortType = 'name_desc';
+                } else {
+                    $scope.keywordsList.sortType = 'name_asc';
+                }
+            }
+            loadKeywords($scope.keywordsList);
+        };
+
+        $scope.pageChanged = function (page) {
+            $scope.keywordsList.page = page;
+            loadKeywords($scope.keywordsList);
+        };
+
+        $scope.delete = function (id) {
             spinner.loading = true;
-            keywords.delete({ id: id }, $scope.keyword, function ()
-            {
+            keywordsResource.delete({ id: id }, function () {
+                loadKeywords($scope.keywordsList);
                 spinner.loading = false;
-                $route.reload();
             });
         };
     });
