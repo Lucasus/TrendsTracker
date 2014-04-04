@@ -2,7 +2,7 @@
 {
     "use strict";
 
-    trendsTrackerApp.controller('KeywordsCtrl', function ($scope, $modal, keywords, spinner)
+    trendsTrackerApp.controller('KeywordsCtrl', function ($scope, $modal, $route, keywords, spinner)
     {
         loadKeywords();
 
@@ -29,6 +29,16 @@
             modalInstance.result.then(function ()
             {
                 loadKeywords();
+            });
+        };
+
+        $scope.delete = function (id)
+        {
+            spinner.loading = true;
+            keywords.delete({ id: id }, $scope.keyword, function ()
+            {
+                spinner.loading = false;
+                $route.reload();
             });
         };
     });

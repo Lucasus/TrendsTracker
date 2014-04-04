@@ -30,7 +30,7 @@
                 <button type="button" class="cmdEdit btn-link tableBtn" data-ng-click="showDialog(keyword.id)">Edit</button>
             </td>
             <td>
-                <button type="button" class="cmdDelete btn-link tableBtn">Delete</button>
+                <button type="button" class="cmdDelete btn-link tableBtn" data-ng-confirm-message="Are you sure?" data-ng-confirm-click="delete(keyword.id)">Delete</button>
             </td>
         </tr>
     </table>

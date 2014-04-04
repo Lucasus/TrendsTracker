@@ -150,6 +150,7 @@
     <Content Include="app\controllers\keywordCtrl.js" />
     <Content Include="app\controllers\spinnerCtrl.js" />
     <Content Include="app\controllers\keywordsCtrl.js" />
+    <Content Include="app\directives\confirm.js" />
     <Content Include="app\services\keywords.js" />
     <Content Include="app\services\spinner.js" />
     <Content Include="app\views\keywordAddUpdate.html" />

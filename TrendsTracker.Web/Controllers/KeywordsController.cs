@@ -41,7 +41,8 @@ namespace TrendsTracker.Web.Controllers
             return keywordRepository.GetById(id).ToViewModel<KeywordDto>();
         }
 
-        [HttpPost, Route("create")]
+        [HttpPost]
+        [Route("")]
         public virtual HttpResponseMessage ProductCreate(KeywordDto model)
         {
             if (!ModelState.IsValid)
@@ -57,7 +58,8 @@ namespace TrendsTracker.Web.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        [HttpPost, Route("{id}/update")]
+        [HttpPost]
+        [Route("{id}")]
         public virtual HttpResponseMessage ProductUpdate(KeywordDto model)
         {
             if (!ModelState.IsValid)
@@ -69,6 +71,17 @@ namespace TrendsTracker.Web.Controllers
                 var entity = keywordRepository.GetById(model.Id);
                 entity.Name = model.Name;
                 keywordRepository.Update(entity);
+            });
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public virtual HttpResponseMessage ProductDelete(int id)
+        {
+            unitOfWork.Do(work =>
+            {
+                keywordRepository.Delete(id);
             });
             return Request.CreateResponse(HttpStatusCode.OK);
         }

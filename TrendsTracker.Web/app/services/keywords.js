@@ -4,14 +4,16 @@
 
     trendsTrackerApp.factory('keywords', function ($resource, $q)
     {
-        return $resource('/api/keywords/:urlFriendlyName',
+        var urlPrefix = "/api/keywords/";
+
+        return $resource(urlPrefix + ':urlFriendlyName',
         {
-            urlFriendlyName: '@urlFriendlyName',
             id: '@id'
         }, 
         {
-            'update': { method: 'POST', url: '/api/keywords/:id/update' },
-            'create': { method: 'POST', url: '/api/keywords/create' },
+            'create': { method: 'POST' },
+            'update': { method: 'POST', url: urlPrefix + ':id' },
+            'delete': { method: 'DELETE', url: urlPrefix + ':id' }
         });
     });
 }());
