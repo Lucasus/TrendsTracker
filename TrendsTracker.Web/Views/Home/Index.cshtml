@@ -27,7 +27,7 @@
                 </ul>
             </div>
             <div class="col-md-9" style="position: relative;">
-                <div data-ng-controller="SpinnerController" class="loader" data-ng-show="spinner.loading"></div>
+                <div data-ng-controller="SpinnerCtrl" class="loader" data-ng-show="spinner.loading"></div>
                 <div class="mainView" data-ng-view="">
                 </div>
             </div>
@@ -56,10 +56,11 @@
 
     <!-- Custom scripts -->
     <script src="/app/app.js"></script>
-    <script src="/app/services/keywordRepository.js"></script>
+    <script src="/app/services/keywords.js"></script>
     <script src="/app/services/spinner.js"></script>
-    <script src="/app/controllers/keywordsController.js"></script>
-    <script src="/app/controllers/keywordController.js"></script>
-    <script src="/app/controllers/spinnerController.js"></script>
+    <script src="/app/controllers/keywordsCtrl.js"></script>
+    <script src="/app/controllers/keywordCtrl.js"></script>
+    <script src="/app/controllers/keywordAddUpdateCtrl.js"></script>
+    <script src="/app/controllers/spinnerCtrl.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 {
     "use strict";
 
-    trendsTrackerApp.controller('SpinnerController', function ($scope, spinner)
+    trendsTrackerApp.controller('SpinnerCtrl', function ($scope, spinner)
     {
         $scope.spinner = spinner;
     });

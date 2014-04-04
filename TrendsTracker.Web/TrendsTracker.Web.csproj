@@ -146,12 +146,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\controllers\keywordController.js" />
-    <Content Include="app\controllers\spinnerController.js" />
-    <Content Include="app\controllers\keywordsController.js" />
+    <Content Include="app\controllers\keywordAddUpdateCtrl.js" />
+    <Content Include="app\controllers\keywordCtrl.js" />
+    <Content Include="app\controllers\spinnerCtrl.js" />
+    <Content Include="app\controllers\keywordsCtrl.js" />
+    <Content Include="app\services\keywords.js" />
     <Content Include="app\services\spinner.js" />
-    <Content Include="app\services\keywordRepository.js" />
-    <Content Include="app\views\keywordModal.html" />
+    <Content Include="app\views\keywordAddUpdate.html" />
     <Content Include="app\views\keyword.html" />
     <Content Include="app\views\keywords.html" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -195,12 +196,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\ControllersInstaller.cs" />
+    <Compile Include="Infrastructure\ComponentsInstaller.cs" />
     <Compile Include="Infrastructure\EntityFrameworkFacility.cs" />
     <Compile Include="Infrastructure\PersistenceInstaller.cs" />
     <Compile Include="Infrastructure\WinsorControllerActivator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\FriendlyUrlGenerator.cs" />
     <Compile Include="Utilities\MappingHelper.cs" />
     <Compile Include="Utilities\VariousExtensions.cs" />
   </ItemGroup>

@@ -11,7 +11,7 @@ namespace ProjectTrackerWeb
         public static void Configure()
         {
             Mapper.CreateMap<Keyword, KeywordDto>();
-                //.ForMember(dest => dest.UrlFriendlyName, m => m.MapFrom(src => new FriendlyUrlGenerator().ToFriendlyUrlName(src.Name)));
+            //.ForMember(dest => dest.UrlFriendlyName, m => m.MapFrom(src => new FriendlyUrlGenerator().ToFriendlyUrlName(src.Name)));
         }
     }
 }

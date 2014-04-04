@@ -10,7 +10,7 @@
     </div>
     <button id="cmdSearch" type="button" class="btn btn-primary">Search</button>
     <div class="btn-group pull-right">
-        <button id="cmdAdd" class="btn btn-success" data-ng-click="showInsertDialog()">
+        <button id="cmdAdd" class="btn btn-success" data-ng-click="showDialog('')">
             <span class=" glyphicon glyphicon-plus">
             </span> Add keyword
         </button>
@@ -25,9 +25,9 @@
             <th style="width: 50px;"></th>
         </tr>
         <tr data-ng-repeat="keyword in keywords">
-            <td><a href="#/keywords/{{keyword.urlFriendlyName}}/details">{{keyword.name}}</a></td>
+            <td><a href="#/keywords/{{keyword.urlFriendlyName}}">{{keyword.name}}</a></td>
             <td>
-                <button type="button" class="cmdEdit btn-link tableBtn">Edit</button>
+                <button type="button" class="cmdEdit btn-link tableBtn" data-ng-click="showDialog(keyword.id)">Edit</button>
             </td>
             <td>
                 <button type="button" class="cmdDelete btn-link tableBtn">Delete</button>

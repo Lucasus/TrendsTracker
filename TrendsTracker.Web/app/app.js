@@ -11,24 +11,16 @@
         $routeProvider
             .when('/keywords',
             {
-                controller: 'KeywordsController',
+                controller: 'KeywordsCtrl',
                 templateUrl: '/app/views/keywords.html'
             })
-            .when('/keywords/:name/:mode',
+            .when('/keywords/:urlFriendlyName',
             {
-                controller: 'KeywordController',
+                controller: 'KeywordCtrl',
                 templateUrl: '/app/views/keyword.html',
                 resolve:
                     {
-                        name: function ($route)
-                        {
-                            return $route.current.params.name
-                        },
-
-                        mode: function ($route)
-                        {
-                            return $route.current.params.mode
-                        }
+                        urlFriendlyName: function ($route) { return $route.current.params.urlFriendlyName; }
                     }
             })
             .otherwise({ redirectTo: '/keywords' });

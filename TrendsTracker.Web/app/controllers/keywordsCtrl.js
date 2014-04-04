@@ -2,28 +2,27 @@
 {
     "use strict";
 
-    trendsTrackerApp.controller('KeywordsController', function ($scope, $modal, keywordRepository, spinner)
+    trendsTrackerApp.controller('KeywordsCtrl', function ($scope, $modal, keywords, spinner)
     {
         loadKeywords();
 
         function loadKeywords()
         {
             spinner.loading = true;
-            keywordRepository.query(function (data)
+            keywords.query(function (data)
             {
                 $scope.keywords = data;
                 spinner.loading = false;
             });
         };
 
-        $scope.showInsertDialog = function ()
+        $scope.showDialog = function (id)
         {
             var modalInstance = $modal.open({
-                templateUrl: '/app/views/keywordModal.html',
-                controller: 'KeywordController',
+                templateUrl: '/app/views/keywordAddUpdate.html',
+                controller: 'KeywordAddUpdateCtrl',
                 resolve: {
-                    name: function () { return '' },
-                    mode: function () { return 'insert' }
+                    keywordId: function () { return id; }
                 }
             });
 
