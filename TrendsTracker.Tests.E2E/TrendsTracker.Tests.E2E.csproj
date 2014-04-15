@@ -52,6 +52,15 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
@@ -89,6 +98,7 @@
     <Compile Include="E2ETests\Pages\HomePage.cs" />
     <Compile Include="TestInfrastructure\ProviderServicesWorkaround.cs" />
     <Compile Include="TestInfrastructure\Tag.cs" />
+    <Compile Include="TestSetup.cs" />
     <Compile Include="TestInfrastructure\WebTestBase.cs" />
     <Compile Include="TestInfrastructure\Page.cs" />
     <Compile Include="TestInfrastructure\DataDeleter.cs" />
@@ -99,6 +109,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TrendsTracker.DataGen\TrendsTracker.DataGen.csproj">
+      <Project>{f33bf3a7-bd0d-41e1-977e-4ec669f5c410}</Project>
+      <Name>TrendsTracker.DataGen</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TrendsTracker.Web\TrendsTracker.Web.csproj">
       <Project>{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}</Project>
       <Name>TrendsTracker.Web</Name>

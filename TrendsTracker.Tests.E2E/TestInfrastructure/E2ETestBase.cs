@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TrendsTracker.Persistence;
 using TrendsTracker.Tests.E2E.TestInfrastructure;
 
 namespace TrendsTracker.E2ETests
@@ -14,7 +15,7 @@ namespace TrendsTracker.E2ETests
         [TestInitialize]
         public void TestInitialize()
         {
-            new DataDeleter().DeleteAllData();
+            TestData.CreateBasicDataStructure();
             page = createPage(App);
         }
     }

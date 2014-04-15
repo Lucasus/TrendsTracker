@@ -1,27 +1,24 @@
-namespace TrendsTracker.Migrations
-{
-    using System;
-    using System.Data.Entity.Migrations;
+using System;
+using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+public partial class InitialCreate : DbMigration
+{
+    public override void Up()
     {
-        public override void Up()
-        {
-            CreateTable(
-                "dbo.Keywords",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        UrlFriendlyName = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
+        CreateTable(
+            "dbo.Keywords",
+            c => new
+                {
+                    Id = c.Int(nullable: false, identity: true),
+                    Name = c.String(),
+                    UrlFriendlyName = c.String(),
+                })
+            .PrimaryKey(t => t.Id);
             
-        }
+    }
         
-        public override void Down()
-        {
-            DropTable("dbo.Keywords");
-        }
+    public override void Down()
+    {
+        DropTable("dbo.Keywords");
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using TrendsTracker.Entities;
-using TrendsTracker.Migrations;
 
 namespace TrendsTracker.Persistence
 {

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows Desktop
+# Visual Studio Express 2013 for Web
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendsTracker", "TrendsTracker\TrendsTracker.csproj", "{9178AC97-B9CE-4DCD-85F3-9B1DEA1B2C10}"
@@ -27,6 +27,7 @@ Global
 		DeployDev|Any CPU = DeployDev|Any CPU
 		Prod|Any CPU = Prod|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Test|Any CPU = Test|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9178AC97-B9CE-4DCD-85F3-9B1DEA1B2C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -37,6 +38,8 @@ Global
 		{9178AC97-B9CE-4DCD-85F3-9B1DEA1B2C10}.Prod|Any CPU.Build.0 = Prod|Any CPU
 		{9178AC97-B9CE-4DCD-85F3-9B1DEA1B2C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9178AC97-B9CE-4DCD-85F3-9B1DEA1B2C10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9178AC97-B9CE-4DCD-85F3-9B1DEA1B2C10}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{9178AC97-B9CE-4DCD-85F3-9B1DEA1B2C10}.Test|Any CPU.Build.0 = Test|Any CPU
 		{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}.DeployDev|Any CPU.ActiveCfg = DeployDev|Any CPU
@@ -45,6 +48,9 @@ Global
 		{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}.Prod|Any CPU.Build.0 = Prod|Any CPU
 		{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}.Test|Any CPU.Build.0 = Test|Any CPU
+		{3DCEFEF5-62E0-40A0-A2DC-105BAA9220D0}.Test|Any CPU.Deploy.0 = Test|Any CPU
 		{5FBDE2C6-231D-4BD1-84AA-63012B98436E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5FBDE2C6-231D-4BD1-84AA-63012B98436E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FBDE2C6-231D-4BD1-84AA-63012B98436E}.DeployDev|Any CPU.ActiveCfg = DeployDev|Any CPU
@@ -53,6 +59,8 @@ Global
 		{5FBDE2C6-231D-4BD1-84AA-63012B98436E}.Prod|Any CPU.Build.0 = Prod|Any CPU
 		{5FBDE2C6-231D-4BD1-84AA-63012B98436E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FBDE2C6-231D-4BD1-84AA-63012B98436E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FBDE2C6-231D-4BD1-84AA-63012B98436E}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{5FBDE2C6-231D-4BD1-84AA-63012B98436E}.Test|Any CPU.Build.0 = Test|Any CPU
 		{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}.DeployDev|Any CPU.ActiveCfg = DeployDev|Any CPU
@@ -61,6 +69,8 @@ Global
 		{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}.Prod|Any CPU.Build.0 = Prod|Any CPU
 		{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}.Test|Any CPU.Build.0 = Test|Any CPU
 		{F33BF3A7-BD0D-41E1-977E-4EC669F5C410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F33BF3A7-BD0D-41E1-977E-4EC669F5C410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F33BF3A7-BD0D-41E1-977E-4EC669F5C410}.DeployDev|Any CPU.ActiveCfg = Debug|Any CPU
@@ -69,6 +79,8 @@ Global
 		{F33BF3A7-BD0D-41E1-977E-4EC669F5C410}.Prod|Any CPU.Build.0 = Release|Any CPU
 		{F33BF3A7-BD0D-41E1-977E-4EC669F5C410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F33BF3A7-BD0D-41E1-977E-4EC669F5C410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F33BF3A7-BD0D-41E1-977E-4EC669F5C410}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{F33BF3A7-BD0D-41E1-977E-4EC669F5C410}.Test|Any CPU.Build.0 = Test|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

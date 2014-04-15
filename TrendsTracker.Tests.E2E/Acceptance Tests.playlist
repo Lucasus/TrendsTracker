@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="TrendsTracker.E2ETests.KeywordPageTests.user_enters_keyword_details_page_and_sees_keyword_name" /><Add Test="TrendsTracker.E2ETests.HomePageTests.user_enters_HomePage_and_should_see_website_name" /></Playlist>

@@ -2,8 +2,9 @@
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using TrendsTracker.Persistence;
 
-internal sealed class MigrationConfiguration : DbMigrationsConfiguration<TrendsTracker.Persistence.PersistenceContext>
+public sealed class MigrationConfiguration : DbMigrationsConfiguration<PersistenceContext>
 {
     public MigrationConfiguration()
     {

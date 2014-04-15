@@ -7,7 +7,7 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
     {
         private string[] tableNames = new[] 
         { 
-            "Keywords"
+            "Keyword"
         };
 
         public void DeleteAllData()

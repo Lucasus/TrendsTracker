@@ -9,12 +9,12 @@ namespace TrendsTracker.Tests.E2E.Pages
     public class KeywordPage : Page
     {
         public KeywordPage(IWebDriver driver) : base(driver) { }
-        public override string PageUrl { get { return "#/keyword/"; } }
+        public override string PageUrl { get { return "#/keywords/"; } }
 
         public void AssertKeywordNameIs(string keywordName)
         {
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => { return !Tag(".mainView").IsEmpty() && !Tag(".keywordName").IsEmpty(); });
-            Assert.IsTrue(Tag(".mainView").ContainsText(keywordName));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(x => { return !Tag("#mainView").IsEmpty() && !Tag("#keywordName").IsEmpty(); });
+            Assert.IsTrue(Tag("#mainView").ContainsText(keywordName));
         }
     }
 }
