@@ -18,14 +18,27 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
             this.driver = driver;
         }
 
+        public IWebElement Element
+        {
+            get
+            {
+                return driver.FindElement(By.CssSelector(selector));
+            }
+        }
+
         public bool ContainsText(string text)
         {
-            return driver.FindElement(By.CssSelector(selector)).Text.Contains(text);
+            return Element.Text.Contains(text);
         }
 
         public bool IsEmpty()
         {
-            return String.IsNullOrEmpty(driver.FindElement(By.CssSelector(selector)).Text);
+            return String.IsNullOrEmpty(Element.Text);
+        }
+
+        public string GetAttribute(string attributeName)
+        {
+            return Element.GetAttribute(attributeName);
         }
     }
 }

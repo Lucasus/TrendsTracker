@@ -18,14 +18,14 @@
 </div>
 
 <div style="margin-top: 10px;">
-    <table class="table table-striped">
+    <table id="keywordsList" class="table table-striped">
         <tr>
             <th><button type="button" class="btn-link tableBtn" data-ng-click="sort('name')">Name</button></th>
             <th style="width: 50px;"></th>
             <th style="width: 50px;"></th>
         </tr>
         <tr data-ng-repeat="keyword in keywordsList.items">
-            <td><a href="#/keywords/{{keyword.urlFriendlyName}}">{{keyword.name}}</a></td>
+            <td><a class="keywordUrl" href="#/keywords/{{keyword.urlFriendlyName}}">{{keyword.name}}</a></td>
             <td>
                 <button type="button" class="cmdEdit btn-link tableBtn" data-ng-click="showDialog(keyword.id)">Edit</button>
             </td>

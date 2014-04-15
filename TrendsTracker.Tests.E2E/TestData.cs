@@ -18,18 +18,27 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
 {
     public class TestData
     {
+        public static IList<Keyword> Keywords { get; set; }
+
         public static void CreateBasicDataStructure()
         {
             var dbContext = new PersistenceContext();
             new DbMigrator(new MigrationConfiguration()).Update();
             new DbDataDeleter(dbContext).DeleteAllData();
 
+            Keywords = new List<Keyword>()
+            {
+                new Keyword() { Name = "Java" },
+                new Keyword() { Name = "CSharp" },
+                new Keyword() { Name = "ASP.NET MVC" },
+            };
+
             new UnitOfWork(dbContext).Do(work =>
             {
-                var keywordRepository = new KeywordRepository(dbContext);
-                keywordRepository.Add(new Keyword() { Name = "Java" });
-                keywordRepository.Add(new Keyword() { Name = "CSharp" });
-                keywordRepository.Add(new Keyword() { Name = "ASP.NET MVC" });
+                foreach (var keyword in Keywords)
+                {
+                    new KeywordRepository(dbContext).Add(keyword);
+                }
             });
             
         }

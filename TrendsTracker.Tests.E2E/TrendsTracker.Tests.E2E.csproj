@@ -94,18 +94,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="E2ETests\Pages\KeywordPage.cs" />
+    <Compile Include="E2ETests\Pages\KeywordsPage.cs" />
     <Compile Include="E2ETests\Pages\HomePage.cs" />
+    <Compile Include="TestInfrastructure\PartialView.cs" />
     <Compile Include="TestInfrastructure\ProviderServicesWorkaround.cs" />
     <Compile Include="TestInfrastructure\Tag.cs" />
-    <Compile Include="TestSetup.cs" />
+    <Compile Include="TestData.cs" />
     <Compile Include="TestInfrastructure\WebTestBase.cs" />
     <Compile Include="TestInfrastructure\Page.cs" />
     <Compile Include="TestInfrastructure\DataDeleter.cs" />
     <Compile Include="TestInfrastructure\E2ETestBase.cs" />
     <Compile Include="E2ETests\HomePageTests.cs" />
     <Compile Include="TestInfrastructure\ApplicationRunner.cs" />
-    <Compile Include="E2ETests\KeywordPageTests.cs" />
+    <Compile Include="E2ETests\KeywordsPageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
