@@ -25,12 +25,12 @@
                 $modalInstance.dismiss('cancel');
             };
 
-            $scope.save = function ()
+            $scope.save = function (keyword)
             {
                 spinner.loading = true;
                 if (keywordId)
                 {
-                    keywordsResource.update({ id: keywordId }, $scope.keyword, function ()
+                    keywordsResource.update({ id: keywordId }, keyword, function ()
                     {
                         spinner.loading = false;
                         $modalInstance.dismiss('cancel');
@@ -39,7 +39,7 @@
                 }
                 else
                 {
-                    keywordsResource.create({}, $scope.keyword, function ()
+                    keywordsResource.create({}, keyword, function ()
                     {
                         spinner.loading = false;
                         $modalInstance.dismiss('cancel');

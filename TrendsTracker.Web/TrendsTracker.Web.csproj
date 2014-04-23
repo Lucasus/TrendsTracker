@@ -153,6 +153,7 @@
     <Content Include="app\directives\confirm.js" />
     <Content Include="app\services\keywordsResource.js" />
     <Content Include="app\services\spinner.js" />
+    <Content Include="app\tests_demo.js" />
     <Content Include="app\views\keywordAddUpdate.html" />
     <Content Include="app\views\keyword.html" />
     <Content Include="app\views\keywords.html" />
