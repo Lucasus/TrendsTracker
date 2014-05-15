@@ -1,15 +1,13 @@
 TrendsTracker
 =============
 
-Online tool for tracking and analyzing technology trends. 
-
-The project is still in early development phase.
+Online tool for tracking and analyzing technology trends. This project helps me to learn new technologies. The project is still in early development phase, application doesn't do very much (simple CRUD for now).
 
 #### Tools, technologies: ####
 
 Server side:
   * ASP.NET MVC + Web API,
-  * SQL Server ,
+  * MS SQL Server,
   * Entity Framework.
 
 Client side:
@@ -17,8 +15,8 @@ Client side:
 
 Testing:
   * Selenium (+PhantomJS),
-  * MSTest + NUnit (yes, both).
+  * Jasmine,
+  * MSTest.
 
 Other:
-  * TeamCity (for CI),
-  * Jira (for Scrum).
+  * TeamCity (for CI).
