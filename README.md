@@ -1,7 +1,12 @@
-TrendsTracker
+Sample CRUD App
 =============
 
-Online tool for tracking and analyzing technology trends. This project helps me to learn new technologies. The project is still in early development phase, application doesn't do very much (simple CRUD for now).
+In the future:
+Online tool for tracking and analyzing technology trends. This project helps me to learn new technologies. 
+
+Now:
+Simple CRUD for now - managing keywords to track.
+
 
 #### Tools, technologies: ####
 
