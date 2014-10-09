@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{916985
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendsTracker.Tests.Unit", "TrendsTracker.Tests.Unit\TrendsTracker.Tests.Unit.csproj", "{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendsTracker.Tests", "TrendsTracker.Tests.Unit\TrendsTracker.Tests.csproj", "{CAB9B068-81FB-4BFA-A81F-0CAA81009EDE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendsTracker.DataGen", "TrendsTracker.DataGen\TrendsTracker.DataGen.csproj", "{F33BF3A7-BD0D-41E1-977E-4EC669F5C410}"
 EndProject

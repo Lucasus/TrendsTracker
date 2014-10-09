@@ -97,6 +97,9 @@
     <Content Include="..\TrendsTracker.Web\app\**\*.js">
       <Link>Dependencies\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Content>
+    <Content Include="..\TrendsTracker.Web\Scripts\**\*.js">
+      <Link>Scripts\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

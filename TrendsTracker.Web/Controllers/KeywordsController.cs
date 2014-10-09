@@ -24,17 +24,17 @@ namespace TrendsTracker.Web.Controllers
         }
 
         [Route("")]
-        public KeywordsDto Get(string searchTerm, string sortType, int page = 1)
+        public KeywordsDto Get(string searchTerm, string sortType, int? page = 1)
         {
             int pageSize = 10;
 
             return new KeywordsDto()
             {
-                Items =  keywordRepository.Get(searchTerm ?? "", sortType ?? "", pageSize, page).Select(x => x.ToViewModel<KeywordDto>()),
+                Items =  keywordRepository.Get(searchTerm ?? "", sortType ?? "", pageSize, page.Value).Select(x => x.ToViewModel<KeywordDto>()),
                 SearchTerm = searchTerm,
                 PageSize = pageSize,
                 SortType = sortType,
-                Page = page,
+                Page = page.Value,
                 TotalRecordsCount = keywordRepository.Count(searchTerm ?? "")
             };
         }

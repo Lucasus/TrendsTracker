@@ -70,9 +70,6 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -94,8 +91,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="E2ETests\Pages\KeywordsPage.cs" />
-    <Compile Include="E2ETests\Pages\HomePage.cs" />
+    <Compile Include="E2ETests\KeywordsPage.cs" />
+    <Compile Include="E2ETests\HomePage.cs" />
+    <Compile Include="TestCategories.cs" />
     <Compile Include="TestInfrastructure\PartialView.cs" />
     <Compile Include="TestInfrastructure\ProviderServicesWorkaround.cs" />
     <Compile Include="TestInfrastructure\Tag.cs" />
@@ -140,7 +138,9 @@
       <DependentUpon>App.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DatabaseTests\" />

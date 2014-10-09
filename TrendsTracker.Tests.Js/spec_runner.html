@@ -5,19 +5,30 @@
 
     <link rel="shortcut icon" type="image/png" href="Content/jasmine/jasmine_favicon.png">
     <link rel="stylesheet" type="text/css" href="Content/jasmine/jasmine.css">
+
+    <!-- Testing 3rd party libraries -->
     <script type="text/javascript" src="Scripts/jasmine/jasmine.js"></script>
     <script type="text/javascript" src="Scripts/jasmine/jasmine-html.js"></script>
     <script type="text/javascript" src="Scripts/jasmine/jasmine-teamcity_reporter.js"></script>
     <script type="text/javascript" src="Scripts/jasmine/console.js"></script>
     <script type="text/javascript" src="Scripts/jasmine/boot.js"></script>
 
-    <!-- include source files here... -->
-    <script type="text/javascript" src="Dependencies/tests_demo.js"></script>
+    <!-- Other 3rd party libraries -->
+    <script src="/Scripts/jquery-1.9.1.js"></script>
+    <script src="/Scripts/angular.js"></script>
+    <script src="/Scripts/angular-mocks.js"></script>
+    <script src="/Scripts/angular-route.js"></script>
+    <script src="/Scripts/angular-resource.js"></script>
+    <script src="/Scripts/ui-bootstrap-0.10.0.js"></script>
+    <script src="/Scripts/ui-bootstrap-tpls-0.10.0.js"></script>
+
+    <script src="Dependencies/tests_demo.js"></script>
 
     <!-- include spec files here... -->
     <script type="text/javascript" src="Tests/keywordAddUpdateCtrl-specs.js"></script>
 </head>
 
 <body>
+    <div id="content"></div>
 </body>
 </html>

@@ -7,7 +7,7 @@ namespace TrendsTracker.Tests.Unit
     [TestClass]
     public class KeywordTests
     {
-        [TestMethod]
+        [TestMethod, TestCategory(TestCategories.Domain)]
         public void Should_correctly_initialize_url_friendly_name()
         {
             var keyword = new Keyword() { Name = "C# friendly" };
