@@ -1,24 +1,29 @@
-TrendsTracker
+TrendsTracker - sample CRUD app
 =============
 
-Online tool for tracking and analyzing technology trends. 
+Now:
+This is Simple CRUD app for now. It manages list of keywords.
 
-The project is still in early development phase.
+
+In the future:
+Online tool for tracking and analyzing technology trends. This project helps me to learn new technologies. 
+
+
 
 #### Tools, technologies: ####
 
 Server side:
-  * ASP.NET MVC + Web API,
-  * SQL Server ,
-  * Entity Framework.
+  * ASP.NET MVC + Web API 2,
+  * MS SQL Server,
+  * Entity Framework 6.
 
 Client side:
   * AngularJS.
 
 Testing:
   * Selenium (+PhantomJS),
-  * MSTest + NUnit (yes, both).
+  * Jasmine,
+  * MSTest.
 
 Other:
-  * TeamCity (for CI),
-  * Jira (for Scrum).
+  * TeamCity (for CI).
