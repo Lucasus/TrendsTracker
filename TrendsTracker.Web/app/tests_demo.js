@@ -1,4 +1,5 @@
-﻿var context = {};
+﻿console.log('tests_demo');
+var context = {};
 
 context.myCtrlOld = function () {
     this.doSomething = function () {
@@ -16,3 +17,4 @@ context.myCtrlNew = function () {
 
 var app = angular.module('app', []);
 app.controller('myCtrl', context.myCtrlOld);
+

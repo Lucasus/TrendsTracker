@@ -26,6 +26,6 @@ page.open(url, function (status) {
             // render the page and save the output to the specified png file
             page.render("output.png");
             phantom.exit();
-        }, 200);
+        }, 500);
     }
 });
