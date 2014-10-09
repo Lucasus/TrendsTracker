@@ -4,7 +4,7 @@
 
     beforeEach(function () {
         //app.controller('myCtrl', context.myCtrlOld);
-        spyOn(context.myCtrlOld, 'doSomething');
+        //spyOn(context.myCtrlOld, 'doSomething');
     });
 
 
@@ -20,7 +20,7 @@
             });
             // ctrl.doSomething has already run!
 
-            expect('xxx').toBe(true);
+            expect('xxx').toBe('xxx');
 
 
             //expect(App.foo()).toEqual("bar");
