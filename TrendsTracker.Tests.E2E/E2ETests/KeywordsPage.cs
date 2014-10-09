@@ -16,7 +16,7 @@ namespace TrendsTracker.Tests.E2E.Pages
         public void AssertKeywordNameIs(string keywordName)
         {
             PartialView.WaitFor("#keywordName");
-            Assert.IsTrue(PartialView.Content.ContainsText(keywordName));
+            Assert.IsTrue(PartialView.Content.ContainsText(keywordName), PartialView.Content.ToString());
         }
 
         public void AssertAreDisplayed(IList<Keyword> keywords)
@@ -24,7 +24,7 @@ namespace TrendsTracker.Tests.E2E.Pages
             PartialView.WaitFor("#keywordsList");
             foreach (var keyword in keywords)
             {
-                Assert.IsTrue(PartialView.Content.ContainsText(keyword.Name));
+                Assert.IsTrue(PartialView.Content.ContainsText(keyword.Name), PartialView.Content.ToString());
             }
         }
 
@@ -32,7 +32,7 @@ namespace TrendsTracker.Tests.E2E.Pages
         {
             PartialView.WaitFor("#keywordsList");
             var a = Tag("a[href*=" + keyword.UrlFriendlyName + "]");// [@class='keywordUrl' and contains(., '" + keyword.Name + "')]");
-            Assert.IsTrue(a.ContainsText(keyword.Name));
+            Assert.IsTrue(a.ContainsText(keyword.Name), a.ToString());
             return a.GetAttribute("href");
         }
     }

@@ -40,5 +40,10 @@ namespace TrendsTracker.Tests.E2E.TestInfrastructure
         {
             return Element.GetAttribute(attributeName);
         }
+
+        public override string ToString()
+        {
+            return Element.Text;
+        }
     }
 }
